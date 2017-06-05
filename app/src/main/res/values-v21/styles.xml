@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MeuTemaPersonalizado" parent="android:Theme.Material.Light" >
+        <item name="android:textColorPrimary">@android:color/holo_purple</item>
+        <item name="android:colorAccent">@android:color/holo_purple</item>
+    </style>
+</resources>

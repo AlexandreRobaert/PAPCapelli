@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "646008744392",
+    "firebase_url": "https://centro-de-beleza-capelli-74af4.firebaseio.com",
+    "project_id": "centro-de-beleza-capelli-74af4",
+    "storage_bucket": "centro-de-beleza-capelli-74af4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646008744392:android:1dc403e3e3907585",
+        "android_client_info": {
+          "package_name": "br.com.capelli.centrodebelezacapelli"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646008744392-cedj7fe623tl501i205qe1gcgqtjrgll.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOis5dswVq4DgOG_4qtmY0p2G7vXSwIiE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

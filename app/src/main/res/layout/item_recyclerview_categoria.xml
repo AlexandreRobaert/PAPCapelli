@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/categoriaCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="10dp"
+    android:background="@drawable/degrade1"
+    >
+
+    <ImageView
+        android:id="@+id/imagenImageView"
+        android:layout_width="164dp"
+        android:layout_height="175dp"
+        android:layout_gravity="right|end"
+        android:layout_weight="1.5"
+        card_view:srcCompat="@drawable/logo_capelli" />
+
+    <TextView
+        android:id="@+id/nomeServicoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="nome serviço"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:textSize="@dimen/titulos"
+        android:textStyle="bold"
+        android:textColor="@color/colorPreto1"/>
+
+    <TextView
+        android:id="@+id/tvCliqueAqui"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="140dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clique para Agendar"
+        android:textColor="@color/material_drawer_primary_text"
+        android:textSize="20dp"
+
+        android:background="@drawable/degrade2"
+
+        />
+
+</android.support.v7.widget.CardView>
