@@ -29,6 +29,10 @@ dependencies {
         transitive = true
     }
     //noinspection GradleCompatible
+    compile group: 'com.squareup.okio', name: 'okio', version: '1.13.0'
+    compile('com.thoughtworks.xstream:xstream:1.4.7') {
+        exclude group: 'xmlpull', module: 'xmlpull'
+    }
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'

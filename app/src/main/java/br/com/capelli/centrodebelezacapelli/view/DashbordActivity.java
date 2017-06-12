@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -88,25 +89,28 @@ public class DashbordActivity extends BaseActivity {
                 })
                 .build();
 
-        ExpandableBadgeDrawerItem expandableFuncionario = new ExpandableBadgeDrawerItem().withName("Funcionario").withIcon(GoogleMaterial.Icon.gmd_collections).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
-                new SecondaryDrawerItem().withName("Cadastrar").withLevel(1).withIcon(GoogleMaterial.Icon.gmd_check).withIdentifier(1),
+        ExpandableBadgeDrawerItem expandableFuncionario = new ExpandableBadgeDrawerItem().withName("Funcionario").withIcon(R.drawable.ic_people_black_24dp).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
+                new SecondaryDrawerItem().withName("Cadastrar").withLevel(1).withIcon(R.drawable.ic_add_black_24dp).withIdentifier(1),
                 new SecondaryDrawerItem().withName("Pesquisar").withLevel(1).withIcon(GoogleMaterial.Icon.gmd_search).withIdentifier(2));
 
-        ExpandableBadgeDrawerItem expandableCategoria = new ExpandableBadgeDrawerItem().withName("Categoria").withIcon(GoogleMaterial.Icon.gmd_collections).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
-                new SecondaryDrawerItem().withName("Cadastrar").withLevel(1).withIcon(GoogleMaterial.Icon.gmd_check).withIdentifier(3),
+        ExpandableBadgeDrawerItem expandableCategoria = new ExpandableBadgeDrawerItem().withName("Categoria").withIcon(R.drawable.ic_featured_play_list_black_24dp).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
+                new SecondaryDrawerItem().withName("Cadastrar").withLevel(1).withIcon(R.drawable.ic_add_black_24dp).withIdentifier(3),
                 new SecondaryDrawerItem().withName("Editar").withLevel(1).withIcon(GoogleMaterial.Icon.gmd_search).withIdentifier(4));
 
-        ExpandableBadgeDrawerItem expandableServicos = new ExpandableBadgeDrawerItem().withName("Serviço").withIcon(GoogleMaterial.Icon.gmd_collections).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
-                new SecondaryDrawerItem().withName("Cadastrar").withLevel(1).withIcon(GoogleMaterial.Icon.gmd_check).withIdentifier(5),
-                new SecondaryDrawerItem().withName("Pesquisar").withLevel(1).withIcon(GoogleMaterial.Icon.gmd_search).withIdentifier(6));
+        ExpandableBadgeDrawerItem expandableServicos = new ExpandableBadgeDrawerItem().withName("Serviço").withIcon(R.drawable.ic_content_cut_black_24dp).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
+                new SecondaryDrawerItem().withName("Cadastrar").withLevel(1).withIcon(R.drawable.ic_add_black_24dp).withIdentifier(5),
+                new SecondaryDrawerItem().withName("Agendar").withLevel(1).withIcon(R.drawable.ic_alarm_add_black_24dp).withIdentifier(6));
 
-        ExpandableBadgeDrawerItem expandablePromocoes = new ExpandableBadgeDrawerItem().withName("Promoções").withIcon(GoogleMaterial.Icon.gmd_collections).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
-                new SecondaryDrawerItem().withName("Cadastrar").withLevel(1).withIcon(GoogleMaterial.Icon.gmd_check).withIdentifier(7),
+        ExpandableBadgeDrawerItem expandablePromocoes = new ExpandableBadgeDrawerItem().withName("Promoções").withIcon(R.drawable.ic_attach_money_black_24dp).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
+                new SecondaryDrawerItem().withName("Cadastrar").withLevel(1).withIcon(R.drawable.ic_add_black_24dp).withIdentifier(7),
                 new SecondaryDrawerItem().withName("Pesquisar").withLevel(1).withIcon(GoogleMaterial.Icon.gmd_search).withIdentifier(8));
 
-        ExpandableBadgeDrawerItem expandableConfiguracoes = new ExpandableBadgeDrawerItem().withName("Configurações").withIcon(GoogleMaterial.Icon.gmd_collections).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
-                new SecondaryDrawerItem().withName("Sair").withLevel(1).withIcon(GoogleMaterial.Icon.gmd_check).withIdentifier(9),
-                new SecondaryDrawerItem().withName("Perfil").withLevel(1).withIcon(GoogleMaterial.Icon.gmd_check).withIdentifier(10));
+        ExpandableBadgeDrawerItem expandableServicoPrestador = new ExpandableBadgeDrawerItem().withName("Meus Serviços").withIcon(R.drawable.ic_content_cut_black_24dp).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
+                new SecondaryDrawerItem().withName("Minha Agenda").withLevel(1).withIcon(R.drawable.ic_event_note_black_24dp).withIdentifier(9),
+                new SecondaryDrawerItem().withName("Prestados").withLevel(1).withIcon(R.drawable.ic_event_available_black_24dp).withIdentifier(10));
+
+        ExpandableBadgeDrawerItem expandableConfiguracoes = new ExpandableBadgeDrawerItem().withName("Configurações").withIcon(R.drawable.ic_settings_black_24dp).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
+                new SecondaryDrawerItem().withName("Perfil").withLevel(1).withIcon(R.drawable.ic_perm_identity_black_24dp).withIdentifier(11));
 
         Drawer navigationDrawer = new DrawerBuilder()
                 .withActivity(this)
@@ -144,18 +148,24 @@ public class DashbordActivity extends BaseActivity {
                                 startActivity(proxima);
                                 break;
                             case 9:
+                                proxima = new Intent(DashbordActivity.this, ServicosPretadorActivity.class);
+                                startActivity(proxima);
+                                finish();
+                                break;
+                            case 10:
+                                Toast.makeText(getApplicationContext(), "Não implementado ainda.", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 11:
+                                proxima = new Intent(DashbordActivity.this, CadastroUsuarioActivity.class);
+                                proxima.putExtra("UID", getUid());
+                                startActivity(proxima);
+                                break;
+                            case 12:
                                 FirebaseAuth.getInstance().signOut();
                                 proxima = new Intent(DashbordActivity.this, LoginActivity.class);
                                 startActivity(proxima);
                                 finish();
                                 break;
-                            case 10:
-                                proxima = new Intent(DashbordActivity.this, CadastroUsuarioActivity.class);
-                                proxima.putExtra("UID", getUid());
-                                startActivity(proxima);
-                                break;
-
-
                         }
                         return false;
                     }
@@ -171,12 +181,13 @@ public class DashbordActivity extends BaseActivity {
             navigationDrawer.addItem(expandablePromocoes);
             navigationDrawer.addItem(expandableConfiguracoes);
         }else if(perfilId == 2){
-            navigationDrawer.addItem(expandableServicos);
+            navigationDrawer.addItem(expandableServicoPrestador);
             navigationDrawer.addItem(expandableConfiguracoes);
         }else if(perfilId == 3){
             navigationDrawer.addItem(expandableServicos);
             navigationDrawer.addItem(expandableConfiguracoes);
         }
+        navigationDrawer.addItem(new SecondaryDrawerItem().withName("Sair").withLevel(1).withIcon(R.drawable.ic_exit_to_app_black_24dp).withIdentifier(12));
     }
 
     private void setPerfil(final Bundle savedInstanceState, final String emailLogado, int perfilId){
@@ -205,10 +216,13 @@ public class DashbordActivity extends BaseActivity {
             query.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    funcionario = dataSnapshot.getValue(Funcionario.class);
-                    funcionario.setUid(dataSnapshot.getKey());
-                    nomeUsuario = funcionario.getNome();
-                    criarNavigationDrawer(savedInstanceState, nomeUsuario, emailLogado);
+                    for(DataSnapshot snap : dataSnapshot.getChildren()){
+                        funcionario = snap.getValue(Funcionario.class);
+                        funcionario.setUid(snap.getKey());
+                        nomeUsuario = funcionario.getNome();
+                        criarNavigationDrawer(savedInstanceState, nomeUsuario, emailLogado);
+                        break;
+                    }
                 }
 
                 @Override

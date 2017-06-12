@@ -6,17 +6,30 @@
     android:layout_height="match_parent"
     tools:context="br.com.capelli.centrodebelezacapelli.view.AgendaHorarioActivity">
 
+    <TextView
+        android:id="@+id/tituloFuncionarioTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/funcionario"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloTextView"
+        app:layout_constraintHorizontal_bias="0.0" />
+
     <Spinner
         android:id="@+id/funcionariosSpinner"
         android:layout_width="344dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/tituloTextView"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tituloFuncionarioTextView" />
 
     <TextView
         android:id="@+id/tituloTextView"
@@ -50,9 +63,7 @@
         android:layout_marginRight="8dp"
         android:text="@string/proximo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/calendarioDatePicker"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TimePicker
         android:id="@+id/relogioTimePicker"
@@ -71,7 +82,5 @@
         android:layout_marginLeft="8dp"
         android:text="@string/voltar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/calendarioDatePicker"/>
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>

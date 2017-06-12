@@ -31,7 +31,6 @@ public class AgendaCategoriaActivity extends BaseFragmentActivity implements Rec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agenda_categoria);
 
-
         recyclerViewCategorias = (RecyclerView) findViewById(R.id.lstCategoriasRecyclerView);
         refCategorias = FirebaseDatabase.getInstance().getReference().child("categorias");
         categorias = new ArrayList<>();

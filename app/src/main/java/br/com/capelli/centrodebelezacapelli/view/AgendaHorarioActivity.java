@@ -3,6 +3,7 @@ package br.com.capelli.centrodebelezacapelli.view;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -104,6 +105,27 @@ public class AgendaHorarioActivity extends BaseActivity {
         calendario = (DatePicker) findViewById(R.id.calendarioDatePicker);
         relogio = (TimePicker) findViewById(R.id.relogioTimePicker);
         relogio.setVisibility(View.INVISIBLE);
+        relogio.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+
+            private static final int TIME_PICKER_INTERVAL=30;
+            private boolean mIgnoreEvent=false;
+
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                Log.d("RELOGIO", "minuto");
+                if (mIgnoreEvent)
+                    return;
+                if (minute % TIME_PICKER_INTERVAL != 0){
+                    int minuteFloor = minute - (minute % TIME_PICKER_INTERVAL);
+                    minute = minuteFloor + (minute == minuteFloor + 1 ? TIME_PICKER_INTERVAL : 0);
+                    if (minute == 60)
+                        minute = 0;
+                    mIgnoreEvent = true;
+                    relogio.setCurrentMinute(minute);
+                    mIgnoreEvent=false;
+                }
+            }
+        });
         proximo = (Button) findViewById(R.id.proximoButton);
         proximo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,6 +168,7 @@ public class AgendaHorarioActivity extends BaseActivity {
                             agendamento.setServico(servico);
                             agendamento.setConfirmado(false);
                             agendamento.setHorario(horario);
+                            agendamento.setValorTotal(servico.getValorServico());
 
                             DatabaseReference refAgendamentos = FirebaseDatabase.getInstance().getReference().child("agendamentos");
                             refAgendamentos.push().setValue(agendamento.toMap()).addOnCompleteListener(new OnCompleteListener<Void>() {

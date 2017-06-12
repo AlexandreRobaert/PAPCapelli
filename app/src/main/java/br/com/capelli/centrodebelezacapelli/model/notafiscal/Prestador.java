@@ -1,11 +1,21 @@
 package br.com.capelli.centrodebelezacapelli.model.notafiscal;
 
-/**
- * Created by alexadre on 24/05/17.
- */
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+@XStreamAlias("prestador")
 public class Prestador {
 
-    public int cpfCnpj;
-    public int cidade;
+	@XStreamAlias("cpfcnpj")
+    public String cpfCnpj;
+    public String cidade = "7513";
+	
+    public String getCpfCnpj() {
+		return cpfCnpj;
+	}
+	public void setCpfCnpj(String cpfCnpj) {
+		this.cpfCnpj = cpfCnpj;
+	}
+	public String getCidade() {
+		return cidade;
+	}    
 }

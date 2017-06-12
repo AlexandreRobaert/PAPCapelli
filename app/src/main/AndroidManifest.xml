@@ -42,7 +42,8 @@
         <activity android:name=".view.CadastroFuncionarioActivity" />
         <activity android:name=".view.CadastroAdmActivity" />
         <activity android:name=".view.AgendaServicoActivity" />
-        <activity android:name=".view.AgendaHorarioActivity"></activity>
+        <activity android:name=".view.AgendaHorarioActivity" />
+        <activity android:name=".view.ServicosPretadorActivity"></activity>
     </application>
 
 </manifest>

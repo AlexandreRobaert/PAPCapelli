@@ -28,9 +28,6 @@ public class CadastroAdmActivity extends AppCompatActivity {
         adm.setEmail("capelli@capelli.com.br");
         adm.setSenha("capelli");
 
-        DatabaseReference refAdm = FirebaseDatabase.getInstance().getReference().child("administrador");
-        refAdm.child("KqD6bbDbUJh23buMZev7g0v5y0x2").setValue(adm);
-
         DatabaseReference refNiveis = FirebaseDatabase.getInstance().getReference().child("niveis");
         Map<String, Object> niv = new HashMap<String, Object>();
         niv.put("email", "capelli@capelli.com.br");

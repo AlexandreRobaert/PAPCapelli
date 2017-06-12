@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import br.com.capelli.centrodebelezacapelli.R;
 import br.com.capelli.centrodebelezacapelli.model.Servico;
@@ -46,10 +48,14 @@ public class AdapterServico extends RecyclerView.Adapter<AdapterServico.ViewHold
         Servico servico = servicos.get(position);
         TextView nome = (TextView) viewHolderServico.servicoCardView.findViewById(R.id.itemNome);
         nome.setText(servico.getNome());
+
         TextView tempoEstimado = (TextView) viewHolderServico.servicoCardView.findViewById(R.id.itemTempoEstimado);
-        tempoEstimado.setText(servico.getTempoEstimado());
+        tempoEstimado.setText("Tempo Estimado " + servico.getTempoEstimado());
+
         TextView valorServico = (TextView) viewHolderServico.servicoCardView.findViewById(R.id.itemValor);
-        valorServico.setText(String.valueOf(servico.getValorServico()));
+        Locale local = new Locale("pt", "BR");
+        NumberFormat format = NumberFormat.getCurrencyInstance(local);
+        valorServico.setText(format.format(servico.getValorServico()));
     }
 
     @Override

@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.capelli.centrodebelezacapelli.view.DashbordActivity"
-    android:background="@drawable/degrade1"
-    >
+    tools:context="br.com.capelli.centrodebelezacapelli.view.DashbordActivity">
 
     <TextView
         android:id="@+id/capellliTextView"
@@ -21,8 +19,7 @@
         android:typeface="serif"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImageView"
-        android:textColor="@color/colorPreto1"/>
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView"/>
 
     <ImageView
         android:id="@+id/imageView5"

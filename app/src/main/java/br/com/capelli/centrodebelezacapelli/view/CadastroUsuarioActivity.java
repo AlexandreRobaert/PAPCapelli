@@ -169,10 +169,6 @@ public class CadastroUsuarioActivity extends BaseActivity {
                     senhaEditText.setVisibility(View.INVISIBLE);
                     repetirEditText.setVisibility(View.INVISIBLE);
                     emailEditText.setVisibility(View.INVISIBLE);
-
-                    if(cliente.getSexo().equalsIgnoreCase("Masculino")){
-
-                    }
                 }
 
                 @Override
@@ -191,12 +187,9 @@ public class CadastroUsuarioActivity extends BaseActivity {
 
                 if(bundle != null){
                     valido = validarFormularioEditado();
-                    Log.d("Validador", "ValidouEditado");
                 }else{
                     valido = validarFormulario();
-                    Log.d("Validador", "Validou");
                 }
-                Log.d("Valido????", String.valueOf(valido));
 
                 if(valido){
                     cliente = new Cliente();

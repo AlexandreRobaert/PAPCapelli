@@ -1,10 +1,5 @@
 package br.com.capelli.centrodebelezacapelli.model;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import br.com.capelli.centrodebelezacapelli.model.Usuario;
-
 /**
  * Created by alexadre on 19/03/17.
  * @author Alexandre Robaert

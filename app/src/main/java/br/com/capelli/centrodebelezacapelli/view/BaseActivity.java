@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 /**
  * Created by alexadre on 09/04/17.
  */

@@ -20,31 +20,33 @@
             android:id="@+id/itemNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_weight="1"
             android:text="@string/nome"
-            android:layout_marginStart="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/colorPreto1"/>
+            android:textColor="@color/YellowGreen"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/itemTempoEstimado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_weight="1"
             android:text="@string/tempo_estimado"
-            android:layout_marginStart="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/colorPreto1"/>
+            android:textColor="@color/colorPreto1"
+            android:textSize="@dimen/com_facebook_share_button_padding_bottom" />
 
         <TextView
             android:id="@+id/itemValor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/valor"
             android:layout_marginStart="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/colorPreto1"/>
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/valor"
+            android:textColor="@color/colorPreto1"
+            android:paddingRight="16px"
+            android:textSize="@dimen/com_facebook_share_button_compound_drawable_padding" />
 
     </LinearLayout>
 
