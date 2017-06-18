@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.capelli.centrodebelezacapelli.view.ServicosPrestadosActivity">
+    tools:context="br.com.capelli.centrodebelezacapelli.view.ServicosPrestadosActivity"
+    android:background="@drawable/degrade1">
 
     <TextView
         android:id="@+id/tituloServicosRealizadosTextView"
@@ -19,7 +20,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        style="@style/textos2"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listaServicoRealizadosRecyclerView"

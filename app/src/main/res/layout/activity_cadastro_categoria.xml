@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.capelli.centrodebelezacapelli.view.CadastroCategoriaActivity">
+    tools:context="br.com.capelli.centrodebelezacapelli.view.CadastroCategoriaActivity"
+    android:background="@drawable/degrade1">
 
     <TextView
         android:id="@+id/tituloTextView"
@@ -19,7 +20,8 @@
         android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"/>
+        android:layout_marginEnd="16dp"
+        style="@style/textos2"/>
 
     <EditText
         android:id="@+id/nomeEditText"
@@ -37,11 +39,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tituloTextView"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        style="@style/edittext2"
         />
 
     <Button
         android:id="@+id/cadastrarButton"
-        android:layout_width="wrap_content"
+        style="@style/botoes1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -51,5 +55,5 @@
         android:text="@string/cadastrar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeEditText"/>
+        app:layout_constraintTop_toBottomOf="@+id/nomeEditText" />
 </android.support.constraint.ConstraintLayout>

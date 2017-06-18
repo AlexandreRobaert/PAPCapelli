@@ -78,7 +78,7 @@ public class DashbordActivity extends BaseActivity {
 
         AccountHeader header = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.imgheader)
+                .withHeaderBackground(R.drawable.imgheader_preto)
                 .addProfiles(new ProfileDrawerItem().withName(String.valueOf(nomeUsuario)).withEmail(emailLogado)
                         .withIcon(GoogleMaterial.Icon.gmd_account_circle)).withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override

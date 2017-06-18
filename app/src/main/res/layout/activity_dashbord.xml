@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.capelli.centrodebelezacapelli.view.DashbordActivity">
+    tools:context="br.com.capelli.centrodebelezacapelli.view.DashbordActivity"
+    android:background="@drawable/degrade1">
 
     <TextView
         android:id="@+id/capellliTextView"
@@ -19,7 +20,8 @@
         android:typeface="serif"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImageView"/>
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView"
+        style="@style/textos2"/>
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -28,9 +30,23 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="100dp"
+        android:adjustViewBounds="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_capelli" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/textos2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/mensagem_dashboard"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/capellliTextView" />
 
 </android.support.constraint.ConstraintLayout>

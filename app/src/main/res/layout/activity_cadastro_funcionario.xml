@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/cadastro_funcionario"
-    tools:context="br.com.capelli.centrodebelezacapelli.view.CadastroFuncionarioActivity">
+    tools:context="br.com.capelli.centrodebelezacapelli.view.CadastroFuncionarioActivity"
+    android:background="@drawable/degrade1">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,7 +25,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            style="@style/textos2"/>
 
         <EditText
             android:id="@+id/nomeFuncionarioEditText"
@@ -41,7 +43,8 @@
             app:layout_constraintTop_toBottomOf="@+id/tituloTextView"
             app:layout_constraintHorizontal_bias="0.503"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            style="@style/edittext2"/>
 
         <EditText
             android:id="@+id/telefoneFuncionarioEditText"
@@ -57,7 +60,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nomeFuncionarioEditText"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            style="@style/edittext2"/>
 
         <EditText
             android:id="@+id/emailFuncionarioEditText"
@@ -73,7 +77,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/telefoneFuncionarioEditText"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            style="@style/edittext2"/>
 
         <EditText
             android:id="@+id/senhaFuncionarioEditText"
@@ -89,22 +94,24 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailFuncionarioEditText"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            style="@style/edittext2"/>
 
         <Button
             android:id="@+id/cadastrarButton"
-            android:layout_width="wrap_content"
+            style="@style/botoes2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="@string/cadastrar"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/senhaRepetirEditText"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/senhaRepetirEditText" />
 
         <EditText
             android:id="@+id/senhaRepetirEditText"
@@ -120,6 +127,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/senhaFuncionarioEditText"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            style="@style/edittext2"/>
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

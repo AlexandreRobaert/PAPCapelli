@@ -9,7 +9,8 @@
     android:paddingBottom="10dp"
     android:paddingTop="10dp"
     card_view:cardCornerRadius="5dp"
-    card_view:cardElevation="10dp">
+    card_view:cardElevation="10dp"
+    android:background="@drawable/degrade1">
 
     <ImageView
         android:id="@+id/imagenImageView"

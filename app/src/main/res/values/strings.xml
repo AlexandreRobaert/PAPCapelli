@@ -17,6 +17,7 @@
     <string name="todos_campos_devem_ser_preenchidos">Todos os campos devem ser preenchidos</string>
     <string name="categoria">Categoria</string>
 
+    <string name="mensagem_dashboard">Araste a lateral esquerda para acessar o Menu</string>
     <string name="action_settings">Settings</string>
     <string name="centro_beleza_capelli">Centro de Beleza Capelli</string>
     <string name="numero_telefone">(41) 3343-9909</string>

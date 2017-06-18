@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.capelli.centrodebelezacapelli.view.AgendaCategoriaActivity">
+    tools:context="br.com.capelli.centrodebelezacapelli.view.AgendaCategoriaActivity"
+    android:background="@drawable/degrade1">
 
     <TextView
         android:id="@+id/servicosTextView"
@@ -19,7 +20,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintHorizontal_bias="0.498" />
+        app:layout_constraintHorizontal_bias="0.498"
+        style="@style/textos2"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/lstCategoriasRecyclerView"
@@ -35,5 +37,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/servicosTextView"
         app:layout_constraintVertical_bias="1.0"
-        tools:listitem="@layout/item_recyclerview_categoria"/>
+        tools:listitem="@layout/item_recyclerview_categoria"
+        />
 </android.support.constraint.ConstraintLayout>

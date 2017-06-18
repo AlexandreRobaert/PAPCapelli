@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.capelli.centrodebelezacapelli.view.AgendaServicoActivity">
+    tools:context="br.com.capelli.centrodebelezacapelli.view.AgendaServicoActivity"
+    android:background="@drawable/degrade1">
 
     <TextView
         android:id="@+id/tituloTextView"
@@ -18,7 +19,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/colorPreto1"/>
+        style="@style/textos2"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/servicosRecyclerview"

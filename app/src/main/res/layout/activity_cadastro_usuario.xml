@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.capelli.centrodebelezacapelli.view.CadastroUsuarioActivity">
+    tools:context="br.com.capelli.centrodebelezacapelli.view.CadastroUsuarioActivity"
+    android:background="@drawable/degrade1">
 
     <android.support.constraint.ConstraintLayout
         android:layout_height="wrap_content"
@@ -19,12 +20,13 @@
             android:ems="10"
             android:hint="@string/nome"
             android:inputType="textPersonName"
-            android:layout_marginRight="8dp"
+            android:layout_marginRight="16dp"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="16dp"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/tituloTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/tituloTextView"
+            style="@style/edittext2"/>
 
         <EditText
             android:id="@+id/sobreNomeEditText"
@@ -41,7 +43,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginTop="18dp"
-            app:layout_constraintTop_toBottomOf="@+id/nomeEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/nomeEditText"
+            style="@style/edittext2"/>
 
         <EditText
             android:id="@+id/telefoneFuncionarioEditText"
@@ -54,7 +57,8 @@
             android:layout_marginTop="13dp"
             app:layout_constraintTop_toBottomOf="@+id/sobreNomeEditText"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp" />
+            android:layout_marginLeft="16dp"
+            style="@style/edittext2"/>
 
         <RadioGroup
             android:id="@+id/sexoRadioGroup"
@@ -64,7 +68,8 @@
             app:layout_constraintLeft_toRightOf="@+id/telefoneFuncionarioEditText"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sobreNomeEditText"
-            app:layout_constraintHorizontal_bias="0.507">
+            app:layout_constraintHorizontal_bias="0.507"
+            >
 
             <RadioButton
                 android:id="@+id/masculinoRadioButton"
@@ -72,7 +77,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/masculino"
                 tools:layout_editor_absoluteX="219dp"
-                tools:layout_editor_absoluteY="176dp" />
+                tools:layout_editor_absoluteY="176dp"
+                style="@style/textos2"
+                />
 
             <RadioButton
                 android:id="@+id/femininoRadioButton"
@@ -80,26 +87,28 @@
                 android:layout_height="wrap_content"
                 android:text="@string/feminino"
                 tools:layout_editor_absoluteX="219dp"
-                tools:layout_editor_absoluteY="218dp" />
+                tools:layout_editor_absoluteY="218dp"
+                style="@style/textos2"/>
 
         </RadioGroup>
 
         <EditText
             android:id="@+id/emailFuncionarioEditText"
-            android:layout_width="wrap_content"
+            style="@style/edittext2"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="65dp"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
+            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/telefoneFuncionarioEditText"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.503" />
+            app:layout_constraintTop_toBottomOf="@+id/telefoneFuncionarioEditText" />
 
         <EditText
             android:id="@+id/senhaFuncionarioEditText"
@@ -116,7 +125,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginEnd="16dp"
+            style="@style/edittext2"/>
 
         <EditText
             android:id="@+id/repetirEditText"
@@ -133,21 +143,24 @@
             app:layout_constraintTop_toBottomOf="@+id/senhaFuncionarioEditText"
             app:layout_constraintHorizontal_bias="0.503"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            style="@style/edittext2"/>
 
         <Button
             android:id="@+id/cadastrarButton"
-            android:layout_width="wrap_content"
+            style="@style/botoes2"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="-17dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="14dp"
             android:text="@string/cadastrar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/repetirEditText"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"/>
+            app:layout_constraintHorizontal_bias="0.0" />
 
         <TextView
             android:id="@+id/tituloTextView"
@@ -161,8 +174,10 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp"
-            android:textColor="@color/colorPreto1"
-            app:layout_constraintHorizontal_bias="0.1" />
+            style="@style/textos2"
+            app:layout_constraintHorizontal_bias="0.1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:id="@+id/deletarImageView"
@@ -173,7 +188,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp"
-            tools:layout_editor_absoluteX="306dp" />
+            android:layout_marginEnd="16dp" />
 
     </android.support.constraint.ConstraintLayout>
 

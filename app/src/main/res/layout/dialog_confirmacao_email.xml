@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/degrade1">
 
     <ImageView
         android:id="@+id/emailImageView"
@@ -13,10 +14,12 @@
 
     <EditText
         android:id="@+id/emailFuncionarioEditText"
-        android:layout_width="match_parent"
+        style="@style/edittext2"
+        android:layout_width="364dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
         android:hint="@string/email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="15dp"/>
 </LinearLayout>

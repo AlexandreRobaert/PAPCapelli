@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.capelli.centrodebelezacapelli.view.ServicosPretadorActivity">
+    tools:context="br.com.capelli.centrodebelezacapelli.view.ServicosPretadorActivity"
+    android:background="@drawable/degrade1">
 
     <TextView
         android:id="@+id/tituloTextView"
@@ -18,7 +19,8 @@
         android:textSize="@dimen/titulos"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/textos2"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listaServicosRecyclerView"

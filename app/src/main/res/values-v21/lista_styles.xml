@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="botoes1">
+        <item name="android:background">@drawable/botoes1_border</item>
+        <item name="android:textColor">@color/DarkGoldenrod</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="edittext2">
+        <item name="android:background">@drawable/edittext_border2</item>
+        <item name="android:textColorHint">@color/Azure</item>
+        <item name="android:textColor">@color/Azure</item>
+        <item name="android:padding">8dp</item>
+    </style>
+    <style name="edittext1">
+        <item name="android:background">@drawable/edittext_border</item>
+        <item name="android:textColorHint">@color/Azure</item>
+        <item name="android:textColor">@color/Azure</item>
+        <item name="android:padding">15dp</item>
+    </style>
+    <style name="textos1">
+        <item name="android:textColor">@color/DarkGoldenrod</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/edittext_border3</item>
+    </style>
+    <style name="textos2">
+        <item name="android:textColor">@color/Azure</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="textos3">
+        <item name="android:textColor">@color/Azure</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="botoes2">
+        <item name="android:background">@drawable/botoes1_border</item>
+        <item name="android:textColor">@color/DarkGoldenrod</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+</resources>
