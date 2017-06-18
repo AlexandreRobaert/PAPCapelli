@@ -78,4 +78,8 @@
     <string name="voltar">Voltar</string>
     <string name="minha_agenda">Minha Agenda</string>
     <string name="finalizar">Finalizar</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="title_servico_list">Servicos</string>
+    <string name="title_servico_detail">Servico Detail</string>
+    <string name="servicos_realizados">Serviços Realizados</string>
 </resources>

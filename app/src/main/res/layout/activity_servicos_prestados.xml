@@ -4,33 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.capelli.centrodebelezacapelli.view.DashbordActivity">
+    tools:context="br.com.capelli.centrodebelezacapelli.view.ServicosPrestadosActivity">
 
     <TextView
-        android:id="@+id/capellliTextView"
+        android:id="@+id/tituloServicosRealizadosTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/centro_beleza_capelli"
+        android:layout_marginTop="8dp"
+        android:text="@string/servicos_realizados"
         android:textSize="@dimen/titulos"
-        android:textStyle="italic"
-        android:typeface="serif"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImageView"/>
-
-    <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_capelli" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listaServicoRealizadosRecyclerView"
+        android:layout_width="57dp"
+        android:layout_height="551dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloServicosRealizadosTextView"
+        app:layout_constraintHorizontal_bias="0.501"
+        android:visibility="invisible"/>
 </android.support.constraint.ConstraintLayout>

@@ -56,15 +56,13 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
-        android:text="@string/cadastrar"
-        android:textColor="@color/primary_text_material_light"
+        android:alpha="0.6"
+        android:text="@string/cadastre_se"
         android:textSize="@dimen/subtitulos"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFacebook"
-        android:background="@drawable/degrade3"
-        android:alpha="0.6"/>
+        app:layout_constraintTop_toBottomOf="@+id/buttonFacebook" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -99,13 +97,11 @@
         android:layout_marginTop="8dp"
         android:alpha="0.6"
         android:text="@string/redefinir_senha"
-        android:textSize="20dp"
+        android:textColor="@color/colorPreto1"
+        android:textSize="12sp"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="@+id/loginButton"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        android:background="@drawable/degrade3"
-        android:textColor="@color/colorPreto1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
 </android.support.constraint.ConstraintLayout>

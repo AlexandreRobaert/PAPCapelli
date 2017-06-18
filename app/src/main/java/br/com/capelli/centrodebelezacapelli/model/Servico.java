@@ -71,10 +71,4 @@ public class Servico {
 
         return dados;
     }
-
-    @Exclude
-    @Override
-    public String toString() {
-        return nome + " " + categoria.getNome() + " R$ " + valorServico;
-    }
 }

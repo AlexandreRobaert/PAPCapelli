@@ -1,10 +1,11 @@
 package br.com.capelli.centrodebelezacapelli.view;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -12,7 +13,6 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.facebook.internal.Utility;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -21,7 +21,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.mikepenz.iconics.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -36,7 +35,6 @@ import br.com.capelli.centrodebelezacapelli.model.Servico;
 public class AgendaHorarioActivity extends BaseActivity {
 
     private DatePicker calendario;
-    private TimePicker relogio;
     private Button proximo;
     private Button voltar;
     private Calendar data;
@@ -47,6 +45,7 @@ public class AgendaHorarioActivity extends BaseActivity {
     private ArrayList<Funcionario> funcionarios;
     private Calendar horario;
     private Servico servico;
+    private TimePicker relogio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +53,8 @@ public class AgendaHorarioActivity extends BaseActivity {
         setContentView(R.layout.activity_agenda_horario);
         nomesFuncionarios = new ArrayList<>();
         funcionarios = new ArrayList<>();
+        nomesFuncionarios.add("SELECIONE UM FUNCIONARIO");
+        horario = Calendar.getInstance();
 
         Bundle bundle = getIntent().getExtras();
         String servicoUid = bundle.getString("servico");
@@ -101,10 +102,30 @@ public class AgendaHorarioActivity extends BaseActivity {
             }
         });
 
-        funcionarioSpinner = (Spinner) findViewById(R.id.funcionariosSpinner);
         calendario = (DatePicker) findViewById(R.id.calendarioDatePicker);
+        long agora = System.currentTimeMillis() - 1000;
+        calendario.setMinDate(agora);
+        calendario.setMaxDate(agora + 5_000_000_000L);
+        funcionarioSpinner = (Spinner) findViewById(R.id.funcionariosSpinner);
+        funcionarioSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 0){
+                    funcionarioSpinner.setBackgroundColor(Color.RED);
+                    Log.d("SPINNER", "CHAMOU");
+                }else{
+                    calendario.setVisibility(View.VISIBLE);
+                    proximo.setVisibility(View.VISIBLE);
+                    funcionarioSpinner.setBackgroundColor(0);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         relogio = (TimePicker) findViewById(R.id.relogioTimePicker);
-        relogio.setVisibility(View.INVISIBLE);
         relogio.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
 
             private static final int TIME_PICKER_INTERVAL=30;
@@ -112,6 +133,8 @@ public class AgendaHorarioActivity extends BaseActivity {
 
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                horario.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                horario.set(Calendar.MINUTE, minute);
                 Log.d("RELOGIO", "minuto");
                 if (mIgnoreEvent)
                     return;
@@ -148,7 +171,7 @@ public class AgendaHorarioActivity extends BaseActivity {
                         }
                     });
 
-                    final Funcionario func = funcionarios.get(funcionarioSpinner.getSelectedItemPosition());
+                    final Funcionario func = funcionarios.get(funcionarioSpinner.getSelectedItemPosition() - 1);
                     Query queryFuncionario = FirebaseDatabase.getInstance().getReference().child("funcionarios").orderByChild("nome").equalTo(func.getNome());
                     queryFuncionario.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -157,8 +180,7 @@ public class AgendaHorarioActivity extends BaseActivity {
                                 funcionario = snap.getValue(Funcionario.class);
                                 funcionario.setUid(dataSnapshot.getKey());
                             }
-                            horario = Calendar.getInstance();
-                            horario.set(calendario.getYear(), calendario.getMonth(), calendario.getDayOfMonth(), relogio.getCurrentHour(), relogio.getCurrentMinute());
+                            horario.set(calendario.getYear(), calendario.getMonth(), calendario.getDayOfMonth());
 
                             Agendamento agendamento = new Agendamento();
                             agendamento.setCliente(cliente);
@@ -192,7 +214,7 @@ public class AgendaHorarioActivity extends BaseActivity {
                     });
                 }else{
                     calendario.setVisibility(View.INVISIBLE);
-                    relogio.setVisibility(View.VISIBLE);
+                   relogio.setVisibility(View.VISIBLE);
                     voltar.setVisibility(View.VISIBLE);
                     proximo.setText("Agendar");
                 }
@@ -202,7 +224,6 @@ public class AgendaHorarioActivity extends BaseActivity {
         });
 
         voltar = (Button) findViewById(R.id.voltarButton);
-        voltar.setVisibility(View.INVISIBLE);
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -221,7 +242,7 @@ public class AgendaHorarioActivity extends BaseActivity {
 
     private void configuraSpinner(){
         ArrayAdapter<String> funcionarioAdapter = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_spinner_dropdown_item, nomesFuncionarios);
+                R.layout.layout_item_spinner, nomesFuncionarios);
         funcionarioAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         funcionarioSpinner.setAdapter(funcionarioAdapter);
     }

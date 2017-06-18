@@ -107,7 +107,7 @@ public class DashbordActivity extends BaseActivity {
 
         ExpandableBadgeDrawerItem expandableServicoPrestador = new ExpandableBadgeDrawerItem().withName("Meus Serviços").withIcon(R.drawable.ic_content_cut_black_24dp).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
                 new SecondaryDrawerItem().withName("Minha Agenda").withLevel(1).withIcon(R.drawable.ic_event_note_black_24dp).withIdentifier(9),
-                new SecondaryDrawerItem().withName("Prestados").withLevel(1).withIcon(R.drawable.ic_event_available_black_24dp).withIdentifier(10));
+                new SecondaryDrawerItem().withName("Serviços Realizados").withLevel(1).withIcon(R.drawable.ic_event_available_black_24dp).withIdentifier(10));
 
         ExpandableBadgeDrawerItem expandableConfiguracoes = new ExpandableBadgeDrawerItem().withName("Configurações").withIcon(R.drawable.ic_settings_black_24dp).withIdentifier(2000).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)).withSubItems(
                 new SecondaryDrawerItem().withName("Perfil").withLevel(1).withIcon(R.drawable.ic_perm_identity_black_24dp).withIdentifier(11));
@@ -150,10 +150,10 @@ public class DashbordActivity extends BaseActivity {
                             case 9:
                                 proxima = new Intent(DashbordActivity.this, ServicosPretadorActivity.class);
                                 startActivity(proxima);
-                                finish();
                                 break;
                             case 10:
-                                Toast.makeText(getApplicationContext(), "Não implementado ainda.", Toast.LENGTH_SHORT).show();
+                                proxima = new Intent(DashbordActivity.this, ServicosPrestadosActivity.class);
+                                startActivity(proxima);
                                 break;
                             case 11:
                                 proxima = new Intent(DashbordActivity.this, CadastroUsuarioActivity.class);
@@ -179,10 +179,8 @@ public class DashbordActivity extends BaseActivity {
             navigationDrawer.addItem(expandableCategoria);
             navigationDrawer.addItem(expandableServicos);
             navigationDrawer.addItem(expandablePromocoes);
-            navigationDrawer.addItem(expandableConfiguracoes);
         }else if(perfilId == 2){
             navigationDrawer.addItem(expandableServicoPrestador);
-            navigationDrawer.addItem(expandableConfiguracoes);
         }else if(perfilId == 3){
             navigationDrawer.addItem(expandableServicos);
             navigationDrawer.addItem(expandableConfiguracoes);

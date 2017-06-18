@@ -4,14 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/degrade1"
     tools:context="br.com.capelli.centrodebelezacapelli.view.CadastroPromocaoActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        >
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tituloTextView"
@@ -24,8 +21,7 @@
             android:textSize="@dimen/titulos"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@color/colorPreto1"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
             android:id="@+id/descricaoEditText"
@@ -105,8 +101,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/dataFimEditText"
-            android:background="@drawable/botao2"/>
+            app:layout_constraintTop_toBottomOf="@+id/dataFimEditText"/>
 
     </android.support.constraint.ConstraintLayout>
 

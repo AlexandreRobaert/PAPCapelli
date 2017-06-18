@@ -8,8 +8,10 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -53,6 +56,7 @@ public class ServicosPretadorActivity extends BaseActivity implements RecyclerVi
     private Funcionario funcionario;
     private AlertDialog dialog;
     private Agendamento agendamento;
+    private Query retornoAgendamentos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,56 +66,68 @@ public class ServicosPretadorActivity extends BaseActivity implements RecyclerVi
         showProgressDialog();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                agendamentos = new ArrayList<>();
+                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                    Agendamento agendamento = new Agendamento();
+                    boolean finalizado = snapshot.child("finalizado").getValue(boolean.class);
+                    String servicoNome = snapshot.child("servico").getValue(String.class);
+                    String horario = snapshot.child("horario").getValue(String.class);
+                    String nomeCliente = snapshot.child("cliente").getValue(String.class);
+                    double valor = snapshot.child("valor").getValue(double.class);
+
+                    if(!finalizado){
+                        agendamento.setUid(snapshot.getKey());
+
+                        Servico servico = new Servico();
+                        servico.setNome(servicoNome);
+                        agendamento.setServico(servico);
+
+                        SimpleDateFormat format = new SimpleDateFormat();
+                        Calendar date = Calendar.getInstance();
+                        Log.d("DATAString", horario);
+                        try {
+                            Date data = format.parse(horario);
+                            date.setTime(data);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        agendamento.setHorario(date);
+
+                        Cliente cliente = new Cliente();
+                        cliente.setNome(nomeCliente);
+                        agendamento.setCliente(cliente);
+                        agendamento.setValorTotal(valor);
+                        agendamentos.add(agendamento);
+                    }
+                }
+                setRecyclerView();
+                hideProgressDialog();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
         Query retornoFuncionario = mDatabase.child("funcionarios").orderByKey().equalTo(getUid());
         retornoFuncionario.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot snap : dataSnapshot.getChildren()){
-                    funcionario = snap.getValue(Funcionario.class);
+                    funcionario = new Funcionario();
                     funcionario.setUid(snap.getKey());
+                    funcionario.setNome(snap.child("nome").getValue(String.class));
+                    break;
                 }
+
                 refAgendamentos = mDatabase.child("agendamentos");
                 Query retornoAgendamentos = refAgendamentos.orderByChild("funcionario").equalTo(funcionario.getNome());
-                valueEventListener = new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        agendamentos = new ArrayList<>();
-                        for (DataSnapshot snapshot: dataSnapshot.getChildren()){
-                            if(!snapshot.child("finalizado").getValue(boolean.class)){
-
-                                Agendamento agendamento = new Agendamento();
-                                agendamento.setUid(snapshot.getKey());
-
-                                Servico servico = new Servico();
-                                servico.setNome(snapshot.child("servico").getValue(String.class));
-                                agendamento.setServico(servico);
-
-                                DateFormat format = DateFormat.getDateInstance(DateFormat.SHORT);
-                                Calendar date = Calendar.getInstance();
-                                try {
-                                    Date data = format.parse(snapshot.child("horario").getValue(String.class));
-                                    date.setTime(data);
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
-                                }
-                                agendamento.setHorario(date);
-
-                                Cliente cliente = new Cliente();
-                                cliente.setNome(snapshot.child("cliente").getValue(String.class));
-                                agendamento.setCliente(cliente);
-                                agendamentos.add(agendamento);
-                            }
-                        }
-                        setRecyclerView();
-                        hideProgressDialog();
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                };
                 retornoAgendamentos.addValueEventListener(valueEventListener);
+
             }
 
             @Override
@@ -174,8 +190,16 @@ public class ServicosPretadorActivity extends BaseActivity implements RecyclerVi
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
-        refAgendamentos.removeEventListener(valueEventListener);
+        if(retornoAgendamentos != null){
+            retornoAgendamentos.removeEventListener(valueEventListener);
+        }
     }
 }

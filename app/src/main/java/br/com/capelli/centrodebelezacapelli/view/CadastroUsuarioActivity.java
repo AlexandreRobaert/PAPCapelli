@@ -87,6 +87,7 @@ public class CadastroUsuarioActivity extends BaseActivity {
         sexoRadioGroup = (RadioGroup) findViewById(R.id.sexoRadioGroup);
         cadastrarButton = (Button) findViewById(R.id.cadastrarButton);
         deleteImageView = (ImageView) findViewById(R.id.deletarImageView);
+        deleteImageView.setVisibility(View.INVISIBLE);
         deleteImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,6 +154,7 @@ public class CadastroUsuarioActivity extends BaseActivity {
         Bundle bundle = getIntent().getExtras();
 
         if(bundle != null){
+            deleteImageView.setVisibility(View.VISIBLE);
             final String uid = bundle.getString("UID");
             tituloTextView = (TextView) findViewById(R.id.tituloTextView);
             tituloTextView.setText("Editar Perfil");

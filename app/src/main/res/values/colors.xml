@@ -10,7 +10,7 @@
     <color name="divider">#BDBDBD</color>
 
     <!-- Material DEFAULT colors -->
-    <color name="material_drawer_primary">#2196f3</color>
+    <color name="material_drawer_primary">#e91e63</color>
     <color name="material_drawer_primary_dark">#1976d2</color>
     <color name="material_drawer_primary_light">#BBDEFB</color>
     <color name="material_drawer_accent">#FF4081</color>
@@ -63,13 +63,13 @@
     <color name="Moccasin">#FFE4B5</color>
     <color name="NavajoWhite">#FFDEAD</color>
     <color name="PeachPuff">#FFDAB9</color>
-    <color name="Gold">#FFD700</color>
+    <color name="Gold">#ffd700</color>
     <color name="Pink">#FFC0CB</color>
     <color name="LightPink">#FFB6C1</color>
     <color name="Orange">#FFA500</color>
     <color name="LightSalmon">#FFA07A</color>
-    <color name="DarkOrange">#FF8C00</color>
-    <color name="Coral">#FF7F50</color>
+    <color name="DarkOrange">#ff8c00</color>
+    <color name="Coral">#ff7f50</color>
     <color name="HotPink">#FF69B4</color>
     <color name="Tomato">#FF6347</color>
     <color name="OrangeRed">#FF4500</color>
@@ -136,7 +136,7 @@
     <color name="SaddleBrown">#8B4513</color>
     <color name="DarkMagenta">#8B008B</color>
     <color name="DarkRed">#8B0000</color>
-    <color name="BlueViolet">#8A2BE2</color>
+    <color name="BlueViolet">#8a2be2</color>
     <color name="LightSkyBlue">#87CEFA</color>
     <color name="SkyBlue">#87CEEB</color>
     <color name="Gray">#808080</color>
@@ -158,7 +158,7 @@
     <color name="DarkOliveGreen">#556B2F</color>
     <color name="Indigo">#4B0082</color>
     <color name="MediumTurquoise">#48D1CC</color>
-    <color name="DarkSlateBlue">#483D8B</color>
+    <color name="DarkSlateBlue">#483d8b</color>
     <color name="SteelBlue">#4682B4</color>
     <color name="RoyalBlue">#4169E1</color>
     <color name="Turquoise">#40E0D0</color>
@@ -181,10 +181,11 @@
     <color name="Teal">#008080</color>
     <color name="Green">#008000</color>
     <color name="DarkGreen">#006400</color>
-    <color name="Blue">#0000FF</color>
+    <color name="Blue">#0000ff</color>
     <color name="MediumBlue">#0000CD</color>
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
+    <color name="holo_light_primary">#ffeb3b</color>
 
 </resources>

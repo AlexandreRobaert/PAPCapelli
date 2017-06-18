@@ -11,8 +11,10 @@ public class Funcionario extends Usuario {
     private String nomeFantasia;
     private String senhaWebService;
 
-    public Funcionario(){
+    public Funcionario(){}
 
+    public Funcionario(String nome){
+        setNome(nome);
     }
 
     public String getCnpj() {

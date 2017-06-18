@@ -54,8 +54,9 @@ public class AdapterServicoPrestador extends RecyclerView.Adapter<AdapterServico
         Date data = agendamento.getHorario().getTime();
         horaDia.setText(formatData.format(data) + " ás " + formatHora.format(data));
 
+        NumberFormat formatador = NumberFormat.getCurrencyInstance();
         TextView nomeServico = (TextView) viewHolderServico.servicoPrestadorCardView.findViewById(R.id.nomeServicoTextView);
-        nomeServico.setText(agendamento.getServico().getNome());
+        nomeServico.setText(agendamento.getServico().getNome() + " " + formatador.format(agendamento.getValorTotal()));
 
         TextView nomeCliente = (TextView) viewHolderServico.servicoPrestadorCardView.findViewById(R.id.nomeClienteTextView);
         nomeCliente.setText("Cliente " + agendamento.getCliente().getNome());

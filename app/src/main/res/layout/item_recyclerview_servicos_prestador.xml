@@ -5,15 +5,15 @@
     android:id="@+id/servicoPrestadorCardView"
     android:layout_width="match_parent"
     android:layout_margin="10dp"
-    android:layout_height="80dp"
+    android:layout_height="wrap_content"
     app:cardCornerRadius="5dp"
-    app:cardElevation="15dp">
+    app:cardElevation="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="14dp">
 
         <TextView
             android:id="@+id/horarioDiaTextView"
@@ -21,23 +21,26 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Hora Dia"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/nomeClienteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome Clinte"
+            android:textAlignment="viewEnd"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/nomeServicoTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingTop="10dp"
             android:text="Nome Servico"
-            tools:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/nomeClienteTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Nome Clinte"
-            android:textSize="16sp" />
+            android:textAlignment="viewEnd"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
